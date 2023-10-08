@@ -55,10 +55,23 @@ func (g *OauthManger) DeletePartner(ctx context.Context, partnerKey string) erro
 	return g.db.DeletePartner(ctx, partnerKey)
 }
 
-func (g *OauthManger) GenOauthToken(ctx context.Context, partnerKey string) (*db_base.OauthToken, error) {
+func (g *OauthManger) GenOauthToken(ctx context.Context, partnerKey string, paratnerSecret string) (*db_base.OauthToken, error) {
+	_, errorf := common.GetLogFuns(ctx)
 	if g.db == nil {
 		return nil, common.GetError(common.ERROR_SYSTEM)
 	}
+
+	partner, err := g.db.GetPartnerByKey(ctx, partnerKey)
+	if err != nil {
+		errorf("get partner info failed, err: %v", err)
+		return nil, err
+	}
+
+	if partner.PartnerSecret != paratnerSecret {
+		errorf("invalid secret, req secret: %v, partner secret: %v", paratnerSecret, partner.PartnerSecret)
+		return nil, common.GetError(common.INVALID_SECRET)
+	}
+
 	return g.db.GenOauthToken(ctx, partnerKey)
 }
 

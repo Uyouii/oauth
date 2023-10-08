@@ -16,6 +16,7 @@ const (
 	INVALID_PARAMS
 	INVALID_TOKEN
 	TOKEN_EXPIRED
+	INVALID_SECRET
 )
 
 var ERROR_MSG_MAP = map[ERROR]string{
@@ -25,6 +26,7 @@ var ERROR_MSG_MAP = map[ERROR]string{
 	INVALID_PARAMS: "invalid params",
 	INVALID_TOKEN:  "invalid token",
 	TOKEN_EXPIRED:  "token expired",
+	INVALID_SECRET: "invalid secret",
 }
 
 func GetError(errno ERROR) error {
