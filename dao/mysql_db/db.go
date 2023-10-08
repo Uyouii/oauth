@@ -67,12 +67,12 @@ func (d *OAuthDao) insert(ctx context.Context, data interface{}) error {
 	return nil
 }
 
-func (d *OAuthDao) update(ctx context.Context, data interface{}) error {
+func (d *OAuthDao) update(ctx context.Context, data interface{}, cond interface{}) error {
 	infof, errorf := common.GetLogFuns(ctx)
 
 	session := d.Engine.Context(ctx)
 
-	_, err := session.Update(data)
+	_, err := session.Update(data, cond)
 	if err != nil {
 		errorf("update failed, err: %v, data: %+v", err, data)
 		return err
