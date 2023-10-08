@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"uyouii.cool/oauth/dao/mysql_db"
+	"github.com/uyouii/oauth/dao/mysql_db"
 )
 
 var testDb = mysql_db.GetNewOauthDb(&mysql_db.MysqlDbConfig{

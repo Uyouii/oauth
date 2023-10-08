@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"uyouii.cool/oauth/common"
-	"uyouii.cool/oauth/dao/db_base"
-	"uyouii.cool/oauth/dao/mysql_db"
+	"github.com/uyouii/oauth/common"
+	"github.com/uyouii/oauth/dao/db_base"
+	"github.com/uyouii/oauth/dao/mysql_db"
 )
 
 type OauthManger struct {

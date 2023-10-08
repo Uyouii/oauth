@@ -1,4 +1,4 @@
-module uyouii.cool/oauth
+module github.com/uyouii/oauth
 
 go 1.17
 

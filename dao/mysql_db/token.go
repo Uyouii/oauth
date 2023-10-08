@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"uyouii.cool/oauth/common"
-	"uyouii.cool/oauth/dao/db_base"
-	"uyouii.cool/oauth/utils"
+	"github.com/uyouii/oauth/common"
+	"github.com/uyouii/oauth/dao/db_base"
+	"github.com/uyouii/oauth/utils"
 )
 
 func (d *OAuthDao) convertToken(token *TokenTab) *db_base.OauthToken {

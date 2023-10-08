@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"uyouii.cool/oauth/common"
-	"uyouii.cool/oauth/dao/db_base"
+	"github.com/uyouii/oauth/common"
+	"github.com/uyouii/oauth/dao/db_base"
 	"xorm.io/xorm"
 )
 
