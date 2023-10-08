@@ -4,6 +4,7 @@ type TokenTab struct {
 	Id              int64  `xorm:"pk autoincr BIGINT(20)"`
 	PartnerKey      string `xorm:"index(pratner_token_index) VARCHAR(64)"`
 	Token           string `xorm:"index(pratner_token_index) unique VARCHAR(128)"`
+	Expire          int64  `xorm:"BIGINT(20)"`
 	ExpireTimestamp int64  `xorm:"BIGINT(20)"`
 	CreateTimestamp int64  `xorm:"BIGINT(20)"`
 	UpdateTimestamp int64  `xorm:"BIGINT(20)"`

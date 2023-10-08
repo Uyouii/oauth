@@ -16,6 +16,7 @@ func (d *OAuthDao) convertToken(token *TokenTab) *db_base.OauthToken {
 		ExpireTime: time.Unix(token.ExpireTimestamp, 0),
 		CreateTime: time.Unix(token.CreateTimestamp, 0),
 		UpdateTime: time.Unix(token.UpdateTimestamp, 0),
+		Expire:     token.Expire,
 	}
 	return res
 }
@@ -39,6 +40,7 @@ func (d *OAuthDao) GenOauthToken(ctx context.Context, partnerKey string) (*db_ba
 
 	token := &TokenTab{
 		PartnerKey:      partnerKey,
+		Expire:          partner.Expire,
 		Token:           utils.GetUuid() + utils.GetUuid(),
 		ExpireTimestamp: time.Now().Unix() + partner.Expire,
 		CreateTimestamp: time.Now().Unix(),

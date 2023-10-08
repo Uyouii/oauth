@@ -17,6 +17,7 @@ type Partner struct {
 type OauthToken struct {
 	PartnerKey string
 	Token      string
+	Expire     int64
 	ExpireTime time.Time
 	CreateTime time.Time
 	UpdateTime time.Time

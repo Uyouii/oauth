@@ -19,6 +19,7 @@ create table if not exists token_tab(
     id bigint primary key auto_increment,
     partner_key varchar(64),
     token varchar(128) unique,
+    expire bigint,
     expire_timestamp bigint,
     create_timestamp bigint,
     update_timestamp bigint
