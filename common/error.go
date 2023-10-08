@@ -11,14 +11,20 @@ type Error struct {
 
 const (
 	ERROR_OK ERROR = iota
+	ERROR_SYSTEM
 	ERROR_EMPTY
 	INVALID_PARAMS
+	INVALID_TOKEN
+	TOKEN_EXPIRED
 )
 
 var ERROR_MSG_MAP = map[ERROR]string{
 	ERROR_OK:       "ok",
+	ERROR_SYSTEM:   "system error",
 	ERROR_EMPTY:    "empty",
 	INVALID_PARAMS: "invalid params",
+	INVALID_TOKEN:  "invalid token",
+	TOKEN_EXPIRED:  "token expired",
 }
 
 func GetError(errno ERROR) error {
